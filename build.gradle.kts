@@ -30,6 +30,16 @@ publishing {
     }
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.compileJava {
+    options.release = 8
+}
+
 tasks.test {
     finalizedBy(tasks.jacocoTestReport)
 }
